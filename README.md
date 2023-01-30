@@ -13,5 +13,6 @@ This link has a few papers on object counting along with datasets to use;
 https://paperswithcode.com/task/object-counting/codeless#datasets
 
 ## Module 2: Simple Finger Math
+![](raising_human_hands.jpg)
 This module for slightly older children will ask simple arithmetic questions with answers between 0 and 10, and the answers provided on webcam by how many fingers are raised. The fingers must be visible on the webcam with the palms facing the camera and the hands positioned 'upright' such that a raised finger tip is higher than the knuckle. There will be a slider control for the number of seconds allowed, and choices for addition, subtraction, or mixed math problems. The outer shell test_finger.py imports get_finger_count from the finger_counter_webcam2 module. At this point, the arithmetic questions in the outer shell is not yet built but the webcam capture of the fingers and the 'answer' is working. Of note, the program requires 
 pip install mediapipe 
