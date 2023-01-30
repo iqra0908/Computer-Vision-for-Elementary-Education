@@ -29,7 +29,7 @@ for prob in range(num_probs):
   if my_answer == answer:
     print('Way to go! That is correct!')
     num_correct = num_correct + 1
-    break
+    
   elif np.abs(my_answer-answer) == 1:
     print('So close!')
   else:
