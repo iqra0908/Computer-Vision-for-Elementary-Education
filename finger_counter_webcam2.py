@@ -11,7 +11,7 @@ mp_hands = mp.solutions.hands
 tipIds=[8,12,16,20]
 
 #countdown refers to the number of seconds before 
-def get_finger_count(countdown = 10):
+def get_finger_count(countdown = 10, question_string = '?'):
     start_time = time.time()
     allowed_time = countdown
     cap = cv2.VideoCapture(0)
@@ -117,8 +117,10 @@ def get_finger_count(countdown = 10):
     
             #cv2.imshow('MediaPipe Hands', image)
             image = cv2.flip(image, 1)
-            image = cv2.putText(image, str(fingerCount), (50, 450), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 0), 10)
-            countdown = round((start_time+allowed_time - time.time()), 2)
+            image = cv2.putText(image, question_string, (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 255, 0), 5)
+            countdown = int(start_time+allowed_time - time.time())
+            image = cv2.putText(image, f'Your answer: {str(fingerCount)}', (50, 550), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 0), 5)
+            countdown = int(start_time+allowed_time - time.time())
             image= cv2.putText(image, f'Time remaining: {countdown}', (50, 650), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 0), 5)
             cv2.imshow('MediaPipe Hands', image)
             #cv2.imshow('MediaPipe Hands', cv2.flip(image,1))
