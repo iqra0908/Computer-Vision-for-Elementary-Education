@@ -119,7 +119,7 @@ def get_finger_count(countdown = 10, question_string = '?'):
             image = cv2.flip(image, 1)
             image = cv2.putText(image, question_string, (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 255, 0), 5)
             countdown = int(start_time+allowed_time - time.time())
-            image = cv2.putText(image, f'Your answer: {str(fingerCount)}', (50, 550), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 0), 5)
+            image = cv2.putText(image, f'{str(fingerCount)}', (400, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 0), 5)
             countdown = int(start_time+allowed_time - time.time())
             image= cv2.putText(image, f'Time remaining: {countdown}', (50, 650), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 0), 5)
             cv2.imshow('MediaPipe Hands', image)
