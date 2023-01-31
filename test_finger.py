@@ -21,15 +21,16 @@ num_correct = 0
 num_probs = 5
 for prob in range(num_probs):
   addend1, addend2, answer = get_addition_prob()
-  print(f'{addend1}+{addend2}=')
+  question_string = f'{addend1}+{addend2}='
+  print(question_string)
   
   
-  my_answer = get_finger_count()
+  my_answer = get_finger_count(countdown = 10, question_string = question_string)
   
   if my_answer == answer:
     print('Way to go! That is correct!')
     num_correct = num_correct + 1
-    
+
   elif np.abs(my_answer-answer) == 1:
     print('So close!')
   else:
@@ -38,4 +39,3 @@ for prob in range(num_probs):
 print(f'You got {num_correct} out of {num_probs} correct!')
 
   
- 
