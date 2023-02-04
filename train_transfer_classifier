@@ -25,12 +25,15 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 from datetime import datetime
 
+# Some parameters being used
 TORCH_VERSION = ".".join(torch.__version__.split(".")[:2])
 CUDA_VERSION = torch.__version__.split("+")[-1]
 print("torch: ", TORCH_VERSION, "; cuda: ", CUDA_VERSION)
 
 model_filename = 'resnet50classifier'+datetime.now().strftime("%Y%m%d")+'.pkl'
 data_dir = 'data/toys_data'
+batch_size = 8
+num_epochs = 25
 
 # Set up transformations for training, validation, and test data
 # For training data we will do resize to 224 * 224, randomized horizontal flipping, rotation, lighting effects, and normalization
@@ -52,7 +55,7 @@ data_transforms = {
         transforms.ToTensor(),
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ]),
-		test': transforms.Compose([
+    test': transforms.Compose([
         transforms.Resize(256),
         transforms.CenterCrop(224),
         transforms.ToTensor(),
@@ -64,9 +67,11 @@ train_dataset = datasets.ImageFolder(os.path.join(data_dir, 'train'),
                                           data_transforms['train'])
 val_dataset = datasets.ImageFolder(os.path.join(data_dir, 'val'),
                                           data_transforms['val'])
+test_dataset = datasets.ImageFolder(os.path.join(data_dir, 'test'), data_transforms['test'])
+
 
 # Create DataLoaders for training and validation sets
-batch_size = 8
+
 train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size,
                                              shuffle=True, num_workers=2)
 val_loader = torch.utils.data.DataLoader(val_dataset, batch_size=batch_size,
@@ -108,7 +113,7 @@ criterion = nn.CrossEntropyLoss()
 # Define optimizer
 optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 
-def train_model(model, criterion, optimizer, dataloaders, scheduler, device, num_epochs=25):
+def train_model(model, criterion, optimizer, dataloaders, scheduler, device, num_epochs=num_epochs):
     model = model.to(device) # Send model to GPU if available
     since = time.time()
 
