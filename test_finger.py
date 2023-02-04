@@ -6,7 +6,7 @@ from finger_counter_webcam2 import get_finger_count
 
 #values that could come from sliders/buttons in streamlit
 num_probs = 5
-which_type = 'addition'
+which_type = 'subraction'
 countdown = 10
 
 
