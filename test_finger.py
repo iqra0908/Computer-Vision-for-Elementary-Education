@@ -42,10 +42,10 @@ num_correct = 0
 for prob in range(num_probs):
   
   #get the question
-  if which_type = 'addition':
+  if which_type == 'addition':
     question_string, answer = get_addition_prob()
     
-  elif which_type = 'subtraction':
+  elif which_type == 'subtraction':
     question_string, answer = get_subtraction_prob()
   
   else:
