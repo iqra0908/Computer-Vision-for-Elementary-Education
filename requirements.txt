@@ -1,0 +1,17 @@
+aiortc==1.2.1
+av==8.0.3
+matplotlib==3.4.2
+numpy==1.21.1
+opencv-python-headless==4.5.3.56
+pydub==0.25.1
+streamlit>=0.84.2
+streamlit_webrtc>=0.25.0
+typing_extensions==3.10.0.0
+openpyxl
+torch==1.10.1
+torchvision==0.11.2
+torchaudio===0.10.1
+ipython
+psutil
+PyYAML>=5.3.1
+tqdm==4.64.1
