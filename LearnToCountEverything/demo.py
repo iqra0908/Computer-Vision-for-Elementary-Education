@@ -7,7 +7,6 @@ Last modified: 19-Apr-2021
 """
 
 import cv2
-from google.colab.patches import cv2_imshow
 from model import CountRegressor, Resnet50FPN
 from utils import MAPS, Scales, Transform, extract_features
 from utils import visualize_output_and_save, select_exemplar_rois
@@ -63,7 +62,7 @@ if args.bbox_file is None: # if no bounding box file is given, prompt the user f
     fout = open(out_bbox_file, "w")
 
     im = cv2.imread(args.input_image)
-    cv2_imshow(im)
+    cv2.imshow('image', im)
     rects = select_exemplar_rois(im)
 
     rects1 = list()
