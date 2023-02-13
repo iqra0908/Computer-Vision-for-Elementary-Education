@@ -159,7 +159,7 @@ def get_num_fingers(frame, hands):
                 if handLandmarks[tip][1] < handLandmarks[tip-2][1]: #Index finger
                     fingerCount = fingerCount+1
                     
-    return fingerCount, results.multi_hand_landmarks
+    return fingerCount, hand_landmarks
 
 
 def math_test(image,  question_string, answer, problem_type, draw_landmarks = False):
@@ -208,10 +208,12 @@ def math_test(image,  question_string, answer, problem_type, draw_landmarks = Fa
         ## Display the image and hand landmarks
         # st.image(image, use_column_width=True)
         # Draw the hand landmarks
-        # if draw_landmarks:
-        #     mp_drawing.draw_landmarks(
-        #                 frame,
-        #                 handlandmarks,
-        #                 mp_hands.HAND_CONNECTIONS,
-        #                 mp_drawing_styles.get_default_hand_landmarks_style(),
-        #                 mp_drawing_styles.get_default_hand_connections_style())
+        if draw_landmarks:
+            mp_drawing.draw_landmarks(
+                        image,
+                        handlandmarks,
+                        mp_hands.HAND_CONNECTIONS,
+                        mp_drawing_styles.get_default_hand_landmarks_style(),
+                        mp_drawing_styles.get_default_hand_connections_style())
+        
+        st.image(image, use_column_width=True)

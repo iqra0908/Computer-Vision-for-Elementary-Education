@@ -1,6 +1,6 @@
 ## Threshold Values
 Conf_threshold = 0.4
-NMS_threshold = 0.4
+NMS_threshold = 0.2
 
 ## Model Configration and Weights file location
 model_config_file = "./models/yolov4-tiny.cfg"
