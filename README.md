@@ -142,7 +142,6 @@ streamlit run streamlit_app.py
 
 ## Citation
 
-If you find the code useful, please cite:
 ```
 @inproceedings{m_Ranjan-etal-CVPR21,
   author = {Viresh Ranjan and Udbhav Sharma and Thu Nguyen and Minh Hoai},
@@ -151,4 +150,6 @@ If you find the code useful, please cite:
   booktitle = {Proceedings of the {IEEE/CVF} Conference on Computer Vision and Pattern Recognition (CVPR)},
 }
 ```
+https://arxiv.org/pdf/2104.08391.pdf
+
 
