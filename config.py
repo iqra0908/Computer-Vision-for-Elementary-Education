@@ -21,8 +21,14 @@ classes_imagenet = "./data/imagenet_classes.txt"
 
 ## Page names for streamlit sidebar
 PAGES = [
-    'Learn Animals Names',
-    'Learn Animals',
-    'Learn Counting',
+    'Learn Animals Names & Counting',
+    'Finger Math Game',
     'About Us'
 ]
+
+## Parameters for hand detection
+min_detection_confidence = 0.5
+min_tracking_confidence = 0.5
+
+## the numeric ID for the landmarks of the finger tips
+tipIds=[8,12,16,20]
