@@ -1,5 +1,5 @@
 # Computer Vision for Elementary Education
-> #### _Archit, Chad, Iqra | Spring '23 | AIPI 540 Computer Vision Project_
+> #### _Archit, Chad, Iqra | Spring '23 | Duke AIPI 540 Computer Vision Project_
 &nbsp;
 
 ## Project Description
@@ -15,7 +15,7 @@ The goal of this project is to create prototype modules that teach children some
 
 &nbsp;
 ### Module 1: Learning Animals (Object detection & Classification)
-The module for learning animals is a combination of object detection and classification. Its purpose is to help kids learn the names of different animals by detecting the presence of animal toys in an image. The module works by using computer vision algorithms to identify and locate animal toys within an image. Once the toys have been detected, the module then classifies each toy into its respective animal category This learning animals module provides an engaging and interactive way for kids to learn about different animals. It allows kids to see real-world examples of animals and their distinctive features, helping them to develop a deeper understanding of the animal kingdom.
+The animal learning module is a fusion of object detection and classification, designed to teach kids the names of various animals through detecting animal toys in an image. Utilizing computer vision algorithms, the module identifies and locates the animal toys in the image and classifies each toy into its appropriate animal category. This module offers a captivating and interactive approach for kids to learn about different animals and their unique characteristics, providing a hands-on experience that enriches their knowledge of the animal kingdom.
 >![img.png](data/images/all_animals.png)
 
 &nbsp;
