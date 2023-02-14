@@ -155,6 +155,7 @@ python ./SVMTraining/SVM_training.py
 **1. Clone this repository and switch to the streamlit-demo branch**
 ```
 git clone https://github.com/iqra0908/Computer-Vision-for-Elementary-Education
+git checkout streamlit-demo
 ```
 **2. Create a conda environment:** 
 ```
@@ -165,16 +166,14 @@ conda activate environ
 ```
 pip install -r requirements.txt
 ```
-**4. Create a jupyter kernal from this environment:** 
-```
-python -m ipykernel install --user --name=environ
-```
-**5. Run the application**
+**4. Run the application**
 ```
 streamlit run streamlit_app.py
 ```
-**6. StreamLit Appication:**
-* Here you can play around with the streamlit demo
+**5. StreamLit Appication:**
+* You can find the code for streamlit application on the [`streamlit-demo`](https://github.com/iqra0908/Computer-Vision-for-Elementary-Education/tree/streamlit-demo) branch
+* [Click Here](https://github.com/iqra0908/Computer-Vision-for-Elementary-Education/tree/streamlit-demo#readme) for the streamlit documentation 
+* Here you can play around with the streamlit demo 
 >![img.png](data/images/dashboard.png)
 
 
