@@ -20,8 +20,8 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 ## Local imports
-from helper import create_datasets, create_dataloaders, train_model
-from config import model_filename, model_dir, pretrained_model_to_use, freeze_pretrained_model
+from helper import create_datasets, create_dataloaders, train_model, test_model
+from config import model_dir, pretrained_model_to_use, freeze_pretrained_model
 from config import data_dir, train_percentage, val_percentage, test_percentage, num_workers
 from config import batch_size, num_epochs
 
