@@ -44,7 +44,17 @@ We have collected the data ourselves for the purpose of this project prototype. 
 
 &nbsp;
 ## Model Training and Evaluation
-We trained three models for comparison - ResNet18, YoloV5 and a Support Vector Machine
+We trained three models for comparison - ResNet18, YoloV5 and a Support Vector Machine:
+
+| Model     |  Accuracy (Test) |
+| --------- | :--------------: |
+| Resnet18  |        80%       |
+| Resnet50  |        84%       |
+
+&nbsp;
+| Model     |  MAP@0.5:0.95    |
+| --------- | :--------------: |
+| YoloV5    |        0.75      |
 
 
 &nbsp;
@@ -109,7 +119,7 @@ pip install -q roboflow
 
 &nbsp;
 ### Model 3: SVM
-The third model trained is a SVM (Support Vector Machine). SVMs are linear classifiers that perform poorly with image data due to its high-dimensional and complex nature. Deep learning models, such as Convolutional Neural Networks (CNNs) are better suited for image data as they can learn non-linear relationships, handle spatial invariance, capture hierarchical features, and incorporate contextual information. We just trained a SVM to proove that linear machine learning models dont perform well on image data
+The third model trained is a SVM (Support Vector Machine). SVMs are linear classifiers that perform poorly with image data due to its high-dimensional and complex nature. Deep learning models, such as Convolutional Neural Networks (CNNs) are better suited for image data as they can learn non-linear relationships, handle spatial invariance, capture hierarchical features, and incorporate contextual information. We just trained a SVM to proove that linear machine learning models dont perform well on image data.
 
 &nbsp;
 ### Following are the steps to run the code and train a SVM model:
