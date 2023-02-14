@@ -32,7 +32,7 @@ https://paperswithcode.com/task/object-counting/codeless#datasets
 
 &nbsp;
 ### Module 3: Simple Finger Math
-This module for slightly older children will ask simple arithmetic questions with answers between 0 and 10, and the answers provided on webcam by how many fingers are raised. The fingers must be visible on the webcam with the palms facing the camera and the hands positioned 'upright' such that a raised finger tip is higher than the knuckle. The original program used live webcam stream, but now that it is ported to streamlit, the functionality is based on a screen capture. There is a radio button control for the choices for addition, subtraction, or mixed math problems.  Once the image is taken, it is processed by the MediaPipe package from Google (https://google.github.io/mediapipe/solutions/hands.html) and a list of x,y coordinates is provided for each detected hand. A determination of the number of fingers raised is based on the landmarks of the finger tip compared with the knuckle (a raised finger has the tip with lower y coordinate than the knuckle), and the thumb is based on the x coordinates of the tip and the base and whether it is the right or left hand. Overall, it is a fun activity for a child to learn simple arithmetic.
+This module for slightly older children will ask simple arithmetic questions with answers between 0 and 10, and the answers provided on webcam by how many fingers are raised. The fingers must be visible on the webcam with the palms facing the camera and the hands positioned 'upright' such that a raised finger tip is higher than the knuckle. The original program used live webcam stream, but now that it is ported to streamlit, the functionality is based on a screen capture. There is a radio button control for the choices for addition, subtraction, or mixed math problems.  Once the image is taken, it is processed by the [MediaPipe](https://google.github.io/mediapipe/solutions/hands.html) package from Google and a list of x,y coordinates is provided for each detected hand. A determination of the number of fingers raised is based on the landmarks of the finger tip compared with the knuckle (a raised finger has the tip with lower y coordinate than the knuckle), and the thumb is based on the x coordinates of the tip and the base and whether it is the right or left hand. Overall, it is a fun activity for a child to learn simple arithmetic.
 
 &nbsp;
 ![img.png](data/images/module3.png)
@@ -40,7 +40,7 @@ This module for slightly older children will ask simple arithmetic questions wit
 
 &nbsp;
 ## Data Capturing & Labelling
-We have collected the data ourselves for the purpose of this project prototype. We bought some animal toys of [Amazon.](https://www.amazon.com/Fisher-Price-Little-People-Animal-Friends/dp/B07MM6QX97/ref=sr_1_2?crid=1CT3PFM11D3JC&keywords=animal+toys+little+people&qid=1676085377&sprefix=animal+toys+little+peop%2Caps%2C156&sr=8-2). There are eight unique animal toys in our dataset - [Dog, Cow, Hen, Lama, Horse, Sheep, Goat, Pig]. Multiple images of each toy were captured at different angles, positions, light intenisty and with a variety of backgrounds. All the raw images were labelled with bounding boxes. We used [Roboflow](https://roboflow.com/?ref=ultralytics) to label and prepare custom data automatically in YOLO format. We considered examples of single and multi object images. All images were resized to Yolo v5 format
+We have collected the data ourselves for the purpose of this project prototype. We bought some animal toys of [Amazon](https://www.amazon.com/Fisher-Price-Little-People-Animal-Friends/dp/B07MM6QX97/ref=sr_1_2?crid=1CT3PFM11D3JC&keywords=animal+toys+little+people&qid=1676085377&sprefix=animal+toys+little+peop%2Caps%2C156&sr=8-2). There are eight unique animal toys in our dataset - [Dog, Cow, Hen, Lama, Horse, Sheep, Goat, Pig]. Multiple images of each toy were captured at different angles, positions, light intenisty and with a variety of backgrounds. All the raw images were labelled with bounding boxes. We used [Roboflow](https://roboflow.com/?ref=ultralytics) to label and prepare custom data automatically in YOLO format. We considered examples of single and multi object images. All images were resized to Yolo v5 format
 
 &nbsp;
 ## Model Training and Evaluation
@@ -50,6 +50,7 @@ We trained three models for comparison - ResNet18, YoloV5 and a Support Vector M
 | --------- | :--------------: |
 | Resnet18  |        80%       |
 | Resnet50  |        84%       |
+| SVM       |        19%       |
 
 &nbsp;
 | Model     |  MAP@0.5:0.95    |
@@ -176,16 +177,21 @@ streamlit run streamlit_app.py
 * Here you can play around with the streamlit demo
 >![img.png](data/images/dashboard.png)
 
-## Citation
 
-```
-@inproceedings{m_Ranjan-etal-CVPR21,
-  author = {Viresh Ranjan and Udbhav Sharma and Thu Nguyen and Minh Hoai},
-  title = {Learning To Count Everything},
-  year = {2021},
-  booktitle = {Proceedings of the {IEEE/CVF} Conference on Computer Vision and Pattern Recognition (CVPR)},
-}
-```
-https://arxiv.org/pdf/2104.08391.pdf
+&nbsp;
+# References
+
+1. Learning to Count Everything | [Viresh Ranjan1, Udbhav Sharma, Thu Nguyen, Minh Hoai](https://arxiv.org/pdf/2104.08391.pdf)   
+_Proceedings of the {IEEE/CVF} Conference on Computer Vision and Pattern Recognition (CVPR)_, 2021. 
+
+2. Latest on Object Counting | [Papers with Code](https://paperswithcode.com/task/object-counting/codeless#datasets)
+
+3. MediaPipe ML Module | [Google](https://google.github.io/mediapipe/solutions/hands.html)
+
+4. Animal Toys Dataset | [Amazon](https://www.amazon.com/Fisher-Price-Little-People-Animal-Friends/dp/B07MM6QX97/ref=sr_1_2?crid=1CT3PFM11D3JC&keywords=animal+toys+little+people&qid=1676085377&sprefix=animal+toys+little+peop%2Caps%2C156&sr=8-2)
+
+5. Dataset Labelling Tool| [Roboflow](https://roboflow.com/?ref=ultralytics)
+
+6. YoloV5 Transfer Learning Package| [Ultralytics](https://github.com/ultralytics/yolov5)
 
 
